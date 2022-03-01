@@ -1,26 +1,54 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+  <main class="container">
+    <v-header></v-header>
+  </main>
 </template>
 
 <script lang="ts">
 import { defineComponent } from '@vue/runtime-core';
-import HelloWorld from './components/HelloWorld.vue';
+import vHeader from "@/components/Header.vue";
 
 export default defineComponent({
   components: {
-    HelloWorld,
+    vHeader
   }
-})
+});
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style lang="scss">
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+* {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  width: 100vw;
+  min-height: 100vh;
+  overflow-x: hidden;
+
+  &::before {
+    background-color: #F78F8F;
+    content: '';
+    height: 30vh;
+    position: absolute;
+    width: 100vw;
+    z-index: -1;
+  }
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  padding-top: 15px;
 }
 </style>
